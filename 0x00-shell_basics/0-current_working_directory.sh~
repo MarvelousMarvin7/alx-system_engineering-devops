@@ -1,4 +1,0 @@
-#!/bin/bash
-echo "welcome"
-pwd
-echo "The absolute path of a working directory"

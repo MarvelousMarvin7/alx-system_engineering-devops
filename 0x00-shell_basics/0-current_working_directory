@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Welcome"
+pwd
+echo "Print path of working directory"
