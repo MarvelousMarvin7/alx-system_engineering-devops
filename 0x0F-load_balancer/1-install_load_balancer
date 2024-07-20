@@ -6,17 +6,16 @@
 sudo apt-get -y update
 sudo apt-get install -y haproxy
 
-balancer="\
+sudo bash -c 'cat <<EOT >> /etc/haproxy/haproxy.cfg
 frontend marvelousmarvin.tech
-	 bind *:80
-	 mode http
-	 default_backend webservers
+    bind *:80
+    mode http
+    default_backend webservers
 
 backend webservers
-   	balance roundrobin
-   	server web-01 3.85.196.66:80 check
-	server web-02 54.175.225.232:80 check
-"
-echo "$balancer" sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
+    balance roundrobin
+    server 1615-web-01 3.85.196.66:80 check
+    server 1615-web-02 54.175.225.232:80 check
+EOT'
 
-sudo service haproxy start
+sudo service haproxy restart
