@@ -18,8 +18,9 @@ if __name__ == "__main__":
     username = user.get('username')
     filename = "{}.json".format(eid)
 
+    data = {eid: [{"task": todo.get("title"),
+                   "completed": todo.get("completed"),
+                   "username": username} for todo in todos]}
+
     with open(filename, mode='w') as jsonfile:
-        for todo in todos:
-            json.dump({eid: [{"task": todo.get("title"),
-                              "completed": todo.get("completed"),
-                              "username": username}]}, jsonfile)
+        json.dump(data, jsonfile)
