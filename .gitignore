@@ -1,2 +1,4 @@
 *~
 create_certbort_certificate
+*.json
+*.csv
