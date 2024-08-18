@@ -1,4 +1,6 @@
-*~
 create_certbort_certificate
 *.json
 *.csv
+*main.py
+*__pycache__/
+*~
