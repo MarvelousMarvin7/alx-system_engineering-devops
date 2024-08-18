@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Query reddit api"""
 import requests
 
 
